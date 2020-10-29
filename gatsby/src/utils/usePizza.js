@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import OrderContext from '../components/OrderComponent';
+import OrderContext from '../components/OrderContext';
 import calculateOrderTotal from './calculateOrderTotal';
 import formatMoney from './formatMoney';
 import attachNamesAndPrices from './attachNamesAndPrices';
@@ -54,7 +54,7 @@ export default function usePizza({ pizzas, values }) {
         body: JSON.stringify(body),
       }
     );
-    const text = JSON.parse(res.text());
+    const text = JSON.parse(await res.text());
 
     // check if everything worked
     if (res.status >= 400 && res.status < 600) {

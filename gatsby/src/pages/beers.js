@@ -1,5 +1,5 @@
-import { graphql } from 'gatsby';
 import React from 'react';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import SEO from '../components/SEO';
 
@@ -27,20 +27,17 @@ const SingleBeerStyles = styled.div`
 export default function BeersPage({ data }) {
   return (
     <>
-      <SEO title="Beers MF" />
+      <SEO title={`Beers! We have ${data.beers.nodes.length} in stock`} />
       <h2 className="center">
-        We have {data.beers.nodes.length} Beers Available. Dine it Only!
+        We have {data.beers.nodes.length} Beers Available. Dine in Only!
       </h2>
       <BeerGridStyles>
         {data.beers.nodes.map((beer) => {
           const rating = Math.round(beer.rating.average);
           return (
             <SingleBeerStyles key={beer.id}>
+              <img src={beer.image} alt={beer.name} />
               <h3>{beer.name}</h3>
-              <img
-                src="https://www.shoppersvineyard.com/images/labels/guinness-guinness-extra-stout.gif"
-                alt={beer.name}
-              />
               {beer.price}
               <p title={`${rating} out of 5 stars`}>
                 {`⭐`.repeat(rating)}

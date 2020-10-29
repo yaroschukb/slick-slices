@@ -12,7 +12,7 @@ const Typography = createGlobalStyle`
     color: var(--black);
   }
   p, li {
-    letter-spacing: 0.5 spx;
+    letter-spacing: 0.5px;
   }
   h1,h2,h3,h4,h5,h6 {
     font-weight: normal;

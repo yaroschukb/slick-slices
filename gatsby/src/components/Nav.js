@@ -33,7 +33,7 @@ const NavStyles = styled.nav`
       --rotate: 2.5deg;
     }
     &:hover {
-      --rotate: 5deg;
+      --rotate: 3deg;
     }
   }
   a {
@@ -46,9 +46,9 @@ const NavStyles = styled.nav`
     @media (max-width: 800px) {
       font-size: 2rem;
     }
-    &[aria-current='page'] {
+    /* &[aria-current='page'] {
       color: var(--red);
-    } 
+    } */
   }
   @media (max-width: 600px) {
     --columns: 4;
